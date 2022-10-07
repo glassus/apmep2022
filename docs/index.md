@@ -1,3 +1,6 @@
-## test affichage
+# Page d'accueil
 
-all right
+
+!!! note "Cloner ce dépôt"
+    - rendez-vous sur
+
