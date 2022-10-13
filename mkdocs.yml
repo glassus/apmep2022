@@ -1,4 +1,4 @@
-site_name: "Titre du site"
+site_name: "Journées Nationales APMEP 2022 : Créer son site avec MkDocs"
 
 
 
@@ -26,8 +26,8 @@ theme:
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: deep purple
-      accent: deep purple
+      primary: teal
+      accent: teal
       toggle:
         icon: material/toggle-switch-off-outline
         name: Mode sombre
@@ -35,8 +35,8 @@ theme:
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: deep purple
-      accent: deep purple
+      primary: teal
+      accent: teal
       toggle:
         icon: material/toggle-switch
         name: Mode clair
