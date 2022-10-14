@@ -65,6 +65,10 @@ Cette commande va permettre de rapatrier sur votre disque dur votre dépôt, pou
 5. Quelques instants plus tard, votre site est visible à la page ```https://<username>.github.io/<nomdudepot>``` 
 
 
-## 5. Fonctionnement quotidien
+## 5. Fonctionnement quotidien : routines de modification du site
 
-1. 
+1. Ouvrir VSC, lancer ```mkdocs serve```.
+2. Ouvrir la page ```127.0.0.1:8000``` dans son navigateur.
+3. Dans VSC, rédiger ses documents en Markdown, faire un ```Ctrl-S``` pour vérifier en local les changements sur le site.
+4. Pour valider les changements et les rendre visibles sur ```GitHub```, aller dans la partie ```Contrôle du code-source``` de VSC, sur le bandeau latéral gauche. 
+5. Les fichiers modifiés apparaissent. Écrire quelques mots pour décrire les changements puis cliquer sur ```Validation```. 
