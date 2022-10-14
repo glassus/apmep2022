@@ -72,3 +72,4 @@ Cette commande va permettre de rapatrier sur votre disque dur votre dépôt, pou
 3. Dans VSC, rédiger ses documents en Markdown, faire un ```Ctrl-S``` pour vérifier en local les changements sur le site.
 4. Pour valider les changements et les rendre visibles sur ```GitHub```, aller dans la partie ```Contrôle du code-source``` de VSC, sur le bandeau latéral gauche. 
 5. Les fichiers modifiés apparaissent. Écrire quelques mots pour décrire les changements puis cliquer sur ```Validation```. 
+6. Cliquer ensuite sur ```Synchroniser les modifications```. 
