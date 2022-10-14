@@ -459,6 +459,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4-hebergement-du-site-sur-les-serveurs-de-github-activation-des-github-pages" class="md-nav__link">
+    4. Hébergement du site sur les serveurs de GitHub: activation des GitHub Pages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-fonctionnement-quotidien" class="md-nav__link">
+    5. Fonctionnement quotidien
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -502,10 +516,7 @@
 <li>Une version récente de <a class="" href="https://www.python.org/downloads/" target="_blank">Python</a> doit également être installée.</li>
 </ul>
 <p>Les packages Python <code>mkdocs-material</code>, <code>mkdocs-macros-plugin</code>, <code>mkdocs-awesome-pages-plugin</code>, <code>mkdocs-git-revision-date-localized-plugin</code> doivent ensuite être installés, par exemple par les commandes :</p>
-<div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">mkdocs</span><span class="o">-</span><span class="n">material</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">mkdocs</span><span class="o">-</span><span class="n">macros</span><span class="o">-</span><span class="n">plugin</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">mkdocs</span><span class="o">-</span><span class="n">awesome</span><span class="o">-</span><span class="n">pages</span><span class="o">-</span><span class="n">plugin</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">mkdocs</span><span class="o">-</span><span class="n">git</span><span class="o">-</span><span class="n">revision</span><span class="o">-</span><span class="n">date</span><span class="o">-</span><span class="n">localized</span><span class="o">-</span><span class="n">plugin</span>
+<div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">mkdocs</span><span class="o">-</span><span class="n">material</span> <span class="n">mkdocs</span><span class="o">-</span><span class="n">macros</span><span class="o">-</span><span class="n">plugin</span> <span class="n">mkdocs</span><span class="o">-</span><span class="n">awesome</span><span class="o">-</span><span class="n">pages</span><span class="o">-</span><span class="n">plugin</span> <span class="n">mkdocs</span><span class="o">-</span><span class="n">git</span><span class="o">-</span><span class="n">revision</span><span class="o">-</span><span class="n">date</span><span class="o">-</span><span class="n">localized</span><span class="o">-</span><span class="n">plugin</span>
 </code></pre></div>
 </div>
 <h3 id="12-hebergement-des-pages">1.2. Hébergement des pages<a class="headerlink" href="#12-hebergement-des-pages" title="Permanent link">⚓︎</a></h3>
@@ -513,10 +524,10 @@
 <p>Toutefois, une alternative libre existe et propose un service équivalent : <a class="" href="https://gitlab.com/gitlab-org/gitlab" target="_blank">GitLab</a> : </p>
 <h2 id="2-creation-dun-nouveau-depot">2. Création d'un nouveau dépôt<a class="headerlink" href="#2-creation-dun-nouveau-depot" title="Permanent link">⚓︎</a></h2>
 <p>La méthode présentée ci-dessous va consister à cloner (<em>forker</em>) un dépôt déjà existant, contenant la structure minimale d'un site en MkDocs.</p>
-<p>Ce site minimal est visible à l'adresse <a class="" href="https://nsi-mauriac.github.io/mkdocs-modele/" target="_blank">https://nsi-mauriac.github.io/mkdocs-modele/</a></p>
+<p>Ce site minimal est visible à l'adresse <a class="" href="https://nsi-mauriac.github.io/mkdocs-modele/" target="_blank">https://nsi-mauriac.github.io/mkdocs-modele/</a>.</p>
 <h3 id="21-sur-githubcom-fork-du-site-modele">2.1 Sur <code>GitHub.com</code> : fork du site modèle<a class="headerlink" href="#21-sur-githubcom-fork-du-site-modele" title="Permanent link">⚓︎</a></h3>
 <ol>
-<li>Connectez-vous sur GitHub.</li>
+<li>Connectez-vous sur <a class="" href="https://github.com/" target="_blank">GitHub</a>.</li>
 <li>Allez à l'adresse <a class="" href="https://github.com/NSI-Mauriac/mkdocs-modele" target="_blank">https://github.com/NSI-Mauriac/mkdocs-modele</a> et cliquer sur le bouton <code>Fork</code> en haut à droite.</li>
 <li>Choisissez un nouveau nom pour votre dépôt (votre <em>repository</em>).</li>
 </ol>
@@ -525,14 +536,27 @@
 <li>Sur la page d'accueil de votre dépôt GitHub, cliquez sur le bouton vert <code>Code</code> et copiez l'adresse affichée, qui doit ressembler à <code>https://github.com/&lt;username&gt;/&lt;nomdudépot&gt;.git</code>. </li>
 <li>Sur votre ordinateur, ouvrez un Terminal et tapez la commande </li>
 </ol>
-<p><code>git clone https://github.com/&lt;username&gt;/&lt;nomdudépot&gt;.git</code> en collant votre adresse par <code>Ctrl-Maj-V</code></p>
+<p><code>git clone https://github.com/&lt;username&gt;/&lt;nomdudépot&gt;.git</code>  (vous pouvez y coller votre adresse par <code>Ctrl-Maj-V</code>).</p>
 <p>Cette commande va permettre de rapatrier sur votre disque dur votre dépôt, pour l'instant uniquement présent sur les serveurs de GitHub.</p>
 <h2 id="3-visualisation-du-site-en-local">3. Visualisation du site en local<a class="headerlink" href="#3-visualisation-du-site-en-local" title="Permanent link">⚓︎</a></h2>
 <ol>
 <li>Ouvrez dans VisualStudioCode le dossier de votre dépôt.</li>
 <li>Dans Terminal, cliquez sur Nouveau terminal pour faire apparaître un nouveau terminal</li>
+<li>Dans ce terminal, placez vous dans le répertoire de votre dépôt.</li>
 <li>Tapez la commande <code>mkdocs serve</code>.</li>
-<li>Un serveur se lance et votre page devient normalement disponible dans votre navigateur à l'adresse  <code>http://127.0.0.1:8000/</code>.</li>
+<li>Un serveur se lance et votre page devient normalement visible dans votre navigateur à l'adresse <code>http://127.0.0.1:8000/</code>.</li>
+</ol>
+<h2 id="4-hebergement-du-site-sur-les-serveurs-de-github-activation-des-github-pages">4. Hébergement du site sur les serveurs de <code>GitHub</code>: activation des <code>GitHub Pages</code><a class="headerlink" href="#4-hebergement-du-site-sur-les-serveurs-de-github-activation-des-github-pages" title="Permanent link">⚓︎</a></h2>
+<ol>
+<li>Toujours en local, dans un Terminal de VSC, tapez la commande <code>mkdocs gh-deploy</code>. Cette commande, qui ne sera réalisée qu'une seule fois, permet de générer toute l'architecture de votre site pour son déploiement sur les pages de <code>GitHub</code>. Elle sera faite automatiquement par la suite sur les serveurs de <code>GitHub</code> à chaque modification de vos pages.</li>
+<li>Connectez-vous sur <a class="" href="https://github.com/" target="_blank">GitHub</a> et allez sur la page d'accuil de votre dépôt.</li>
+<li>Cliquez sur <code>Settings</code>, puis dans la colonne de gauche sur <code>Pages</code>.</li>
+<li>Dans la partie <code>Build and deployment</code>, choisir la branche <code>gh-pages</code> puis cliquer sur <code>Save</code>.</li>
+<li>Quelques instants plus tard, votre site est visible à la page <code>https://&lt;username&gt;.github.io/&lt;nomdudepot&gt;</code> </li>
+</ol>
+<h2 id="5-fonctionnement-quotidien">5. Fonctionnement quotidien<a class="headerlink" href="#5-fonctionnement-quotidien" title="Permanent link">⚓︎</a></h2>
+<ol>
+<li></li>
 </ol>
 
   <hr>
@@ -540,7 +564,7 @@
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">13 octobre 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">14 octobre 2022</span>
       
     
   </small>
