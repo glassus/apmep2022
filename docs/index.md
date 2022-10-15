@@ -3,7 +3,7 @@
 
 ## 1. Introduction
 
-- Charles POULMAIRE, enseignant de Mathématiques et de NSI dans l'Académie de Versailles.
+- Charles POULMAIRE, enseignant de Mathématiques et de NSI dans l'Académie de Versailles. Président de l'AEIF.
 - Gilles LASSUS, enseignant de Mathématiques et de NSI dans l'Académie de Bordeaux.
 
 Membres de l'[AEIF](/AEIF/AEIF/){. target="_blank"}.
