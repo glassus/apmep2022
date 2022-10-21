@@ -1,3 +1,0 @@
-# Sites de référence
-
-blablabla

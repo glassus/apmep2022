@@ -1,4 +1,4 @@
-# Créer son propre site
+# Créer et héberger son propre site
 
 
 ## 1. Préparation de l'installation
