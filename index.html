@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
     
     
       
@@ -225,8 +225,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="R%C3%A9f%C3%A9rences/feuille1/" class="md-tabs__link">
-        Références
+      <a href="Git/feuille1/" class="md-tabs__link">
+        Git
       </a>
     </li>
   
@@ -331,9 +331,91 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-mkdocs" class="md-nav__link">
-    2. MkDocs ?
+  <a href="#2-le-partage-le-partage-le-partage" class="md-nav__link">
+    2. Le partage, le partage, le partage
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-un-site-mais-a-quel-prix-technique" class="md-nav__link">
+    3. Un site, mais à quel prix technique ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-exemples-de-sites-utilisant-mkdocs" class="md-nav__link">
+    4. Exemples de sites utilisant Mkdocs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mkdocs" class="md-nav__link">
+    5. MkDocs ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ouvrons-le-capot-quel-code-pour-quel-resultat" class="md-nav__link">
+    6. Ouvrons le capot : quel code pour quel résultat ?
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Ouvrons le capot : quel code pour quel résultat ?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-exemple-dune-portion-de-site" class="md-nav__link">
+    6.1 Exemple d'une portion de site
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-le-code-en-markdown-ayant-genere-cette-portion-de-site" class="md-nav__link">
+    6.2 Le code en Markdown ayant généré cette portion de site
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-de-multiples-extensions-et-possibilites" class="md-nav__link">
+    7. De multiples extensions et possibilités
+  </a>
+  
+    <nav class="md-nav" aria-label="7. De multiples extensions et possibilités">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-prise-en-charge-du-latex" class="md-nav__link">
+    7.1 Prise en charge du Latex.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-console-python" class="md-nav__link">
+    7.2 Console Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-integration-diframe" class="md-nav__link">
+    7.2 Intégration d'iframe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -410,14 +492,14 @@
       
       
         <label class="md-nav__link" for="__nav_3">
-          Références
+          Git
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Références" data-md-level="1">
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          Références
+          Git
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -427,8 +509,8 @@
   
   
     <li class="md-nav__item">
-      <a href="R%C3%A9f%C3%A9rences/feuille1/" class="md-nav__link">
-        Sites de référence
+      <a href="Git/feuille1/" class="md-nav__link">
+        Prise en main de Git
       </a>
     </li>
   
@@ -476,7 +558,7 @@
   
     <li class="md-nav__item">
       <a href="Tutoriel/tutoriel/" class="md-nav__link">
-        Créer son propre site
+        Créer et héberger son propre site
       </a>
     </li>
   
@@ -511,21 +593,116 @@
 <li>Charles POULMAIRE, enseignant de Mathématiques et de NSI dans l'Académie de Versailles. Président de l'AEIF.</li>
 <li>Gilles LASSUS, enseignant de Mathématiques et de NSI dans l'Académie de Bordeaux.</li>
 </ul>
-<p>Membres de l'<a class="" href="/AEIF/AEIF/" target="_blank">AEIF</a>.</p>
-<h2 id="2-mkdocs">2. MkDocs ?<a class="headerlink" href="#2-mkdocs" title="Permanent link">⚓︎</a></h2>
+<p>Membres de l'<a class="" href="/AEIF/AEIF/" target="_blank">Association des Enseignantes et enseignants d'Informatique de France</a>.</p>
+<p><a class="" href="https://aeif.fr/" target="_blank"><img alt="image" class="center" src="data/aeif_small.png" /></a></p>
+<h2 id="2-le-partage-le-partage-le-partage">2. Le partage, le partage, le partage<a class="headerlink" href="#2-le-partage-le-partage-le-partage" title="Permanent link">⚓︎</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Déclararation préalable</p>
+<p>La solution que nous allons présenter implique le dépôt de nos ressources dans une <strong>forge ouverte</strong>. N'importe qui peut donc venir voir les documents, consulter les sources, et ainsi modifier et améliorer le contenu.</p>
+<p>Il n'y a pas de section privée.
+Le contenu est souvent déclaré en licence Creative Commons. (CC BY-SA en ce qui nous concerne)</p>
+</div>
+<h2 id="3-un-site-mais-a-quel-prix-technique">3. Un site, mais à quel prix technique ?<a class="headerlink" href="#3-un-site-mais-a-quel-prix-technique" title="Permanent link">⚓︎</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">Partis pris techniques</p>
+<p><img alt="⛔" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26d4.svg" title=":no_entry:" /> Nous ne souhaitons pas : </p>
 <ul>
-<li><a class="" href="https://www.mkdocs.org/" target="_blank">MkDocs</a> est un logiciel libre permettant de générer des sites de <strong>documentation</strong> d'autres logiciels. Nous allons utiliser un thème particulier pour MkDocs, nommé <a class="" href="https://squidfunk.github.io/mkdocs-material/" target="_blank">Material for MkDocs</a></li>
+<li>écrire intégralement un site en <code>html</code> / <code>JavaScript</code> : trop complexe !</li>
+<li>utiliser de CMS (comme Wordpress) : pas assez de contrôle sur le contenu, et partage des sources difficile.</li>
 </ul>
+<p><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> Nous souhaitons :</p>
+<ul>
+<li>pouvoir nous concentrer uniquement sur le contenu pédagogique.</li>
+<li>une courbe d'apprentissage rapide du langage.</li>
+</ul>
+</div>
+<p><img alt="➡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/27a1.svg" title=":arrow_right:" /> nous écrirons notre contenu en <a class="" href="https://fr.wikipedia.org/wiki/Markdown" target="_blank">Markdown</a>. Le logiciel <strong>MkDocs</strong> se chargera ensuite de construire le site qui affichera notre contenu.</p>
+<h2 id="4-exemples-de-sites-utilisant-mkdocs">4. Exemples de sites utilisant Mkdocs<a class="headerlink" href="#4-exemples-de-sites-utilisant-mkdocs" title="Permanent link">⚓︎</a></h2>
+<ul>
+<li>
+<p><a class="" href="https://squidfunk.github.io/mkdocs-material/getting-started/" target="_blank">https://squidfunk.github.io/mkdocs-material/getting-started/</a></p>
+</li>
+<li>
+<p><a class="" href="https://e-nsi.forge.aeif.fr/pratique/" target="_blank">https://e-nsi.forge.aeif.fr/pratique/</a></p>
+</li>
+<li>
+<p><a class="" href="https://ericecmorlaix.github.io/adn-Tutoriel_site_web/MarkDown-Mkdocs_Material/#fichier-md" target="_blank">https://ericecmorlaix.github.io/adn-Tutoriel_site_web/MarkDown-Mkdocs_Material/#fichier-md</a></p>
+</li>
+<li>
+<p><a class="" href="https://glassus.github.io/terminale_nsi/" target="_blank">https://glassus.github.io/terminale_nsi/</a></p>
+</li>
+</ul>
+<h2 id="5-mkdocs">5. MkDocs ?<a class="headerlink" href="#5-mkdocs" title="Permanent link">⚓︎</a></h2>
+<p><a class="" href="https://www.mkdocs.org/" target="_blank">MkDocs</a> est un logiciel libre permettant de générer des sites de <strong>documentation</strong> d'autres logiciels. Nous allons utiliser un thème particulier pour MkDocs, nommé <a class="" href="https://squidfunk.github.io/mkdocs-material/" target="_blank">Material for MkDocs</a>, développé et maintenu par <a class="" href="https://github.com/squidfunk" target="_blank">Martin Donath</a>.</p>
 <p>Le principe fondamental de cette technologie est de permettre à l'utilisateur de rédiger uniquement ses pages en <a class="" href="https://fr.wikipedia.org/wiki/Markdown" target="_blank">Markdown</a>, sans avoir à écrire de <code>html</code>.</p>
-<p>Le Markdown étant un langage de description très facile d'accès et d'utilisation, il est possible de se concentrer uniquement sur le fond, laissant à <code>MkDocs</code> le soin de gérer la forme.</p>
-<p>Par exemple, voici le code Markown permettant de générer <a class="" href="https://raw.githubusercontent.com/glassus/apmep2022/main/docs/index.md" target="_blank">la page actuelle</a>.</p>
+<p>Le Markdown étant un langage de description très facile d'accès et d'utilisation, il est possible de se concentrer uniquement sur le fond, laissant à MkDocs le soin de gérer la forme.</p>
+<h2 id="6-ouvrons-le-capot-quel-code-pour-quel-resultat">6. Ouvrons le capot : quel code pour quel résultat ?<a class="headerlink" href="#6-ouvrons-le-capot-quel-code-pour-quel-resultat" title="Permanent link">⚓︎</a></h2>
+<h3 id="61-exemple-dune-portion-de-site">6.1 Exemple d'une portion de site<a class="headerlink" href="#61-exemple-dune-portion-de-site" title="Permanent link">⚓︎</a></h3>
+<p><a class="" href="https://glassus.github.io/premiere_nsi/T1_Demarrer_en_Python/1.3_Boucle_while/cours/#32-piege-n2-ne-jamais-entrer-dans-la-boucle" target="_blank"><img alt="image" class="center" src="data/ex1.png" /></a></p>
+<h3 id="62-le-code-en-markdown-ayant-genere-cette-portion-de-site">6.2 Le code en Markdown ayant généré cette portion de site<a class="headerlink" href="#62-le-code-en-markdown-ayant-genere-cette-portion-de-site" title="Permanent link">⚓︎</a></h3>
+<div class="highlight"><pre><span></span><code>### 3.2 piège n°2 : ne JAMAIS ENTRER dans la boucle
+
+!!! bug &quot;Exemple fondateur n°3 :heart:&quot;
+    Le programme suivant :
+    ```python linenums=&#39;1&#39;
+    a = 0
+    while a &gt; 10:
+        print(&quot;ce texte non plus ne s&#39;écrira jamais&quot;)
+        a = a + 1
+
+    print(&quot;fini&quot;) 
+    ```
+
+    va écrire ```fini``` et s&#39;arrêter.
+
+
+!!! example &quot;Exercice 1&quot;
+    === &quot;Énoncé&quot;
+        Trouver le plus petit nombre entier $n$ tel que $2^n$ soit supérieur à 1 milliard.
+    === &quot;Correction&quot;
+        ```python linenums=&#39;1&#39;
+        n = 1
+        while 2**n &lt; 10**9:
+            n = n + 1
+            print(&quot;trop petit&quot;)
+        print(&quot;trouvé : &quot;,n)
+        ```
+</code></pre></div>
+<h2 id="7-de-multiples-extensions-et-possibilites">7. De multiples extensions et possibilités<a class="headerlink" href="#7-de-multiples-extensions-et-possibilites" title="Permanent link">⚓︎</a></h2>
+<p>Le mot d'ordre de la solution MkDocs est la <strong>simplicité</strong>.</p>
+<p>Il est toutefois possible de rajouter de multiples fonctionnalités (qui rendront peut-être le code de moins en moins simple).</p>
+<h3 id="71-prise-en-charge-du-latex">7.1 Prise en charge du Latex.<a class="headerlink" href="#71-prise-en-charge-du-latex" title="Permanent link">⚓︎</a></h3>
+<p>Aucun problème et aucune lourdeur dans la syntaxe, il suffit d'encadrer son code de $... comme en <span class="arithmatex">\(\LaTeX\)</span> !</p>
+<h3 id="72-console-python">7.2 Console Python<a class="headerlink" href="#72-console-python" title="Permanent link">⚓︎</a></h3>
+<p>Une éditeur Python peut être intégré très facilement :</p>
+<div class="ide_classe"><div class="wrapper"><div class="interior_wrapper"><div id="editor_1"></div></div><div id="term_editor_1" class="term_editor"></div></div><button class="emoji" onclick='interpretACE("editor_1","v")'>▶️</button><span style="indent-text:5em"> </span><button class="emoji" onclick='download_file("editor_1","")'>⤵️</button><span style="indent-text:5em"> </span><button class="emoji" onclick="document.getElementById('input_editor_1').click()">⤴️</button>                <input type="file" id="input_editor_1" name="file" enctype="multipart/form-data" class="hide"/></div>
+<p><span id="content_editor_1" class="hide"></span><span id="corr_content_editor_1" class="hide"></span></p>
+<p>Il nécessite la présence de fichiers particuliers (javascript, css) dans l'arborescence de votre site.</p>
+<h3 id="72-integration-diframe">7.2 Intégration d'iframe<a class="headerlink" href="#72-integration-diframe" title="Permanent link">⚓︎</a></h3>
+<p>À l'intérieur du Markdown, il est possible d'écrire du <code>html</code> et donc d'intégrer des iframes... mais le code n'est plus très simple et on se retrouve à faire ce qu'on a voulu éviter : du <code>hmtl</code> !!</p>
+<div class="admonition note">
+<p class="admonition-title">Exemple d'intégration</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Rendu</label><label for="__tabbed_1_2">Code utilisé</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Regardez cette belle animation GeoGebra :
+<iframe src="https://www.geogebra.org/classic/ahavfqve?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe></p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>Regardez cette belle animation GeoGebra :
+&lt;iframe src=&quot;https://www.geogebra.org/classic/ahavfqve?embed&quot; width=&quot;800&quot; height=&quot;600&quot; allowfullscreen style=&quot;border: 1px solid #e4e4e4;border-radius: 4px;&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">15 octobre 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">21 octobre 2022</span>
       
     
   </small>
