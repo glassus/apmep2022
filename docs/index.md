@@ -74,7 +74,7 @@ Le Markdown étant un langage de description très facile d'accès et d'utilisat
 
 !!! bug "Exemple fondateur n°3 :heart:"
     Le programme suivant :
-    ```python linenums='1'
+    ```python
     a = 0
     while a > 10:
         print("ce texte non plus ne s'écrira jamais")
@@ -90,7 +90,7 @@ Le Markdown étant un langage de description très facile d'accès et d'utilisat
     === "Énoncé"
         Trouver le plus petit nombre entier $n$ tel que $2^n$ soit supérieur à 1 milliard.
     === "Correction"
-        ```python linenums='1'
+        ```python
         n = 1
         while 2**n < 10**9:
             n = n + 1
@@ -118,13 +118,13 @@ Une éditeur Python peut être intégré très facilement :
 
 Il nécessite la présence de fichiers particuliers (javascript, css) dans l'arborescence de votre site.
 
-Pour les ensiegnants d'informatique, il est aussi possible d'intégrer [une console SQL](https://epithumia.github.io/mkdocs-sqlite-console/usage/#afficher-la-consoleide){. target="_blank"} pour réaliser des requêtes en direct.
+Pour les enseignants d'informatique, il est aussi possible d'intégrer [une console SQL](https://epithumia.github.io/mkdocs-sqlite-console/usage/#afficher-la-consoleide){. target="_blank"} pour réaliser des requêtes en direct.
 
 
 
 ### 7.3 Intégration d'iframes
 
-À l'intérieur du Markdown, il est possible d'écrire du ```html``` et donc d'intégrer des iframes... mais le code n'est plus très simple et on se retrouve à faire ce qu'on a voulu éviter : du ```hmtl``` !!
+À l'intérieur du Markdown, il est possible d'écrire du ```html``` et donc d'intégrer des iframes... mais le code n'est plus très simple et on se retrouve à faire ce qu'on a voulu éviter : du ```html``` !!
 
 !!! note "Exemple d'intégration"
     === "Code utilisé"
@@ -144,4 +144,4 @@ Pour les ensiegnants d'informatique, il est aussi possible d'intégrer [une cons
 
 Il est courant de générer un pdf depuis un fichier Markdown, notamment avec [pandoc](https://pandoc.org/demos.html){. target="_blank"}.
 
-Mais il est possible transformer directement vos pages web générées par MkDocs en un (joli) pdf grâce au plugin [mkdocs-page-pdf](https://github.com/brospars/mkdocs-page-pdf){. target="_blank"} créé par Benoït Ropars. 
+Mais il est possible transformer directement vos pages web générées par MkDocs en un (joli) pdf grâce au plugin [mkdocs-page-pdf](https://github.com/brospars/mkdocs-page-pdf){. target="_blank"} créé par Benoît Ropars. 

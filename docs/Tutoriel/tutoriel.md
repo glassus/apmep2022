@@ -8,7 +8,7 @@
 !!! tip "Pré-requis logiciels et packages Python"
     Les logiciels suivants sont nécessaires :
 
-    - [Git](https://git-scm.com/){. target="_blank"}
+    - [Git](https://git-scm.com/){. target="_blank"}.
     - [VisualStudioCode](https://code.visualstudio.com/){. target="_blank"} (ou son équivalent libre [VSCodium](https://vscodium.com/){. target="_blank"})
     - Une version récente de [Python](https://www.python.org/downloads/){. target="_blank"} doit également être installée.
 
@@ -18,18 +18,29 @@
     pip install mkdocs-material mkdocs-macros-plugin mkdocs-awesome-pages-plugin mkdocs-git-revision-date-localized-plugin
     ```
 
+:warning: **utilisation de Git**
+
+- Le principe d'utilsation de Git est complexe : des fiches explicatives sont disponibles [ici](/Git/git1/)
+- Toutefois, le logiciel VisualStudioCode intègre nativement la prise en charge de Git, et en propose une interface simple et agréable. 
+
 ### 1.2. Hébergement des pages
 
 Dans nos exemples, les pages sont hébergées chez [GitHub](https://github.com/){. target="_blank"}, chez qui la création d'un compte est donc nécessaire. 
 
-Toutefois, une alternative libre existe et propose un service équivalent : [GitLab](https://gitlab.com/gitlab-org/gitlab){. target="_blank"} : 
+Toutefois, une alternative libre existe et propose un service équivalent : [GitLab](https://gitlab.com/gitlab-org/gitlab){. target="_blank"}.
 
 
 ## 2. Création d'un nouveau dépôt
 
-La méthode présentée ci-dessous va consister à cloner (*forker*) un dépôt déjà existant, contenant la structure minimale d'un site en MkDocs.
+!!! note inline end "fork"
+    Un fork est une copie personnelle d'un dépôt existant. Cette copie est totalement indépendante du dépôt initial.
+
+La méthode présentée ci-dessous va consister à **forker** un dépôt déjà existant, contenant la structure minimale d'un site en MkDocs.
 
 Ce site minimal est visible à l'adresse [https://nsi-mauriac.github.io/mkdocs-modele/](https://nsi-mauriac.github.io/mkdocs-modele/){. target="_blank"}.
+
+
+
 
 ### 2.1 Sur ```GitHub.com``` : fork du site modèle
 
@@ -71,5 +82,37 @@ Cette commande va permettre de rapatrier sur votre disque dur votre dépôt, pou
 2. Ouvrir la page ```127.0.0.1:8000``` dans son navigateur.
 3. Dans VSC, rédiger ses documents en Markdown, faire un ```Ctrl-S``` pour vérifier en local les changements sur le site.
 4. Pour valider les changements et les rendre visibles sur ```GitHub```, aller dans la partie ```Contrôle du code-source``` de VSC, sur le bandeau latéral gauche. 
-5. Les fichiers modifiés apparaissent. Écrire quelques mots pour décrire les changements puis cliquer sur ```Validation```. 
-6. Cliquer ensuite sur ```Synchroniser les modifications```. 
+5. Les fichiers modifiés apparaissent. Écrire quelques mots pour décrire les changements puis cliquer sur ```Validation```. On réalise alors un *commit*.
+6. Cliquer ensuite sur ```Synchroniser les modifications```. On réalise alors un *push*.
+7. Sur les serveurs de GitHub, de manière automatique, notre site va se construire et se déployer. Suivant la taille du site, il peut se passer 1 ou 2 minutes avant que le site soit actualisé.
+
+
+!!! note "Quelles commandes sont exécutées sur le serveur distant ?"
+    Dans l'arborescence de notre dépôt se trouve un dossier caché ```.github``` qui contient un fichier ```ci.yml``` (ci comme *Continuous Integration*). On y retrouve les commandes exécutées sur le serveur distant :
+
+    ```
+    name: ci
+    on:
+      push:
+        branches:
+          - master
+          - main
+    jobs:
+      deploy:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v3
+            with:
+              fetch-depth: 0
+          - uses: actions/setup-python@v2
+            with:
+              python-version: 3.x
+          - run: pip install mkdocs-material
+          - run: pip install mkdocs-macros-plugin
+          - run: pip install mkdocs-awesome-pages-plugin
+          - run: pip install mkdocs-git-revision-date-localized-plugin
+          - run: mkdocs gh-deploy --force
+
+    ```
+
+    On y retrouve l'installation des plugins nécessaires, et la toute dernière ligne ```mkdocs gh-deploy``` qui nous avait permis de construire (localement) notre site.
