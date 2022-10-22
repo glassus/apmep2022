@@ -1,0 +1,1229 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.7">
+    
+    
+      
+        <title>Introduction Git / Github - Journées Nationales APMEP 2022 : Créer son site avec MkDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+    <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet">
+
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../xtra/stylesheets/pyoditeur.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a-introduction-git-github" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Journées Nationales APMEP 2022 : Créer son site avec MkDocs" class="md-header__button md-logo" aria-label="Journées Nationales APMEP 2022 : Créer son site avec MkDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Journées Nationales APMEP 2022 : Créer son site avec MkDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction Git / Github
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/glassus/apmep2022" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    glassus/apmep2022
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Présentation
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../git1/" class="md-tabs__link md-tabs__link--active">
+        Git
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Tutoriel/tutoriel/" class="md-tabs__link">
+        Tutoriel
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Journées Nationales APMEP 2022 : Créer son site avec MkDocs" class="md-nav__button md-logo" aria-label="Journées Nationales APMEP 2022 : Créer son site avec MkDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Journées Nationales APMEP 2022 : Créer son site avec MkDocs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/glassus/apmep2022" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    glassus/apmep2022
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Présentation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git1/" class="md-nav__link">
+        Git premiers pas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Introduction Git / Github
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Introduction Git / Github
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-introduction-git-github" class="md-nav__link">
+    A. Introduction Git Github
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-branches" class="md-nav__link">
+    B. Branches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-forks-and-pull-requests" class="md-nav__link">
+    C. Forks and Pull Requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-issues" class="md-nav__link">
+    D. Issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-cloner-un-depot-et-push-pull" class="md-nav__link">
+    E. Cloner un dépot et Push-Pull
+  </a>
+  
+    <nav class="md-nav" aria-label="E. Cloner un dépot et Push-Pull">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partie-1" class="md-nav__link">
+    Partie 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-2" class="md-nav__link">
+    Partie 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f-git-init-and-git-add" class="md-nav__link">
+    F. Git init and git add
+  </a>
+  
+    <nav class="md-nav" aria-label="F. Git init and git add">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-creation-dun-dossier-local-test_depot" class="md-nav__link">
+    1. Création d'un dossier local test_depot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ajouter-un-nouveau-fichier" class="md-nav__link">
+    2. Ajouter un nouveau fichier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-mettre-tout-dans-un-depot" class="md-nav__link">
+    3. Mettre tout dans un dépot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-changement-dans-github" class="md-nav__link">
+    4.  Changement dans GitHub
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git3/" class="md-nav__link">
+        Différences clone / fork
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Tutoriel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutoriel" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tutoriel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutoriel/tutoriel/" class="md-nav__link">
+        Créer et héberger son propre site
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+    
+                  
+
+  <a href="https://github.com/glassus/apmep2022/edit/master/docs/Git/git2.md" title="Editer cette page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+  <h1>Introduction Git / Github</h1>
+
+<div class="toc">
+<ul>
+<li><a href="#a-introduction-git-github">A. Introduction Git Github</a></li>
+<li><a href="#b-branches">B. Branches</a></li>
+<li><a href="#c-forks-and-pull-requests">C. Forks and Pull Requests</a></li>
+<li><a href="#d-issues">D. Issues</a></li>
+<li><a href="#e-cloner-un-depot-et-push-pull">E. Cloner un dépot et Push-Pull</a><ul>
+<li><a href="#partie-1">Partie 1</a></li>
+<li><a href="#partie-2">Partie 2</a></li>
+</ul>
+</li>
+<li><a href="#f-git-init-and-git-add">F. Git init and git add</a><ul>
+<li><a href="#1-creation-dun-dossier-local-test_depot">1. Création d'un dossier local test_depot</a></li>
+<li><a href="#2-ajouter-un-nouveau-fichier">2. Ajouter un nouveau fichier</a></li>
+<li><a href="#3-mettre-tout-dans-un-depot">3. Mettre tout dans un dépot</a></li>
+<li><a href="#4-changement-dans-github">4.  Changement dans GitHub</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<p><img alt="📝" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4dd.svg" title=":pencil:" /> Ce document est conçu pour vous apprendre les bases du travail avec le contrôle de version git et le site Web GitHub.</p>
+<p>Objectifs d'apprentissage:</p>
+<ul>
+<li>Comprendre le concept de contrôle de version.</li>
+<li>Comprendre la différence entre le logiciel git et le site Web GitHub.</li>
+<li>Comprendre la terminologie : branche, fourche, fusion, pull, push, distant</li>
+<li>Effectuez votre première demande d'extraction vers un référentiel git sur GitHub.</li>
+</ul>
+<p>Il s'inspire des vidéos suivantes 
+<a href="https://www.youtube.com/watch?v=BCQHnlnPusY&amp;list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV">Ressource pour ce document</a>
+<img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_40ae4ab2d2d2c2cd21d9dd28c2e86e02.PNG" /></p>
+<hr />
+<p><img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_b2b976faf464402fdcb4e79473543a33.png" />
+<a href="https://www.youtube.com/watch?v=225wkShIcc8">La Tech avec Bertrand</a></p>
+<hr />
+<p>Quelques vidéos pour comprendre les concepts</p>
+<ul>
+<li>
+<p><a href="https://youtu.be/iub0_uVWGmg">Démystifions Git, Github, Gitlab (1/3) : Notion d’historique</a></p>
+</li>
+<li>
+<p><a href="https://youtu.be/4xsd8jHyVpk">Démystifions Git, Github, Gitlab (2/3) : Travailler à plusieurs</a></p>
+</li>
+<li>
+<p><a href="https://youtu.be/5EFyKBF1wWw">Démystifions Git, Github, Gitlab (3/3) : L’écosystème Git</a></p>
+</li>
+</ul>
+<hr />
+<h2 id="a-introduction-git-github">A. Introduction Git Github<a class="headerlink" href="#a-introduction-git-github" title="Permanent link">⚓︎</a></h2>
+<p>Pourquoi Git et GitHub ?</p>
+<ul>
+<li>La gestion de versions (en anglais : version control ou revision control) consiste à gérer l'ensemble des versions d'un ou plusieurs fichiers (généralement en texte).</li>
+<li>Collaboration</li>
+</ul>
+<p>Git est un logiciel de controle de version</p>
+<p>GitHub est un service web</p>
+<p>Première activité rapide <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" /></p>
+<p><strong>Repository</strong></p>
+<ul>
+<li>Créer un compte sur Github</li>
+<li>Créer un dépot (repository) nommé <code>rainbow</code></li>
+<li>Créer un nouveau fichier nommer <code>poemes.txt</code></li>
+</ul>
+<p><strong>Commit new file</strong> </p>
+<ul>
+<li><code>Commit directly to the main branch</code></li>
+<li>Le poeme est dans le dépot</li>
+</ul>
+<p><strong>Commmit change</strong></p>
+<ul>
+<li>Cliquer sur poeme.txt</li>
+<li>Il manque la couleur verte.</li>
+<li>Cliquer sur le crayon --&gt; Edit this file</li>
+<li>Remplir en bas <code>Commit change</code> par "j'ai ajouté la couleur verte" puis cliquer sur <code>Commit changes</code></li>
+<li>Il manque la couleur jaune. Cliquer sur le crayon --&gt; <code>Edit this file</code></li>
+<li>Remplir en bas <code>Commit change</code> par "j'ai ajouté la couleur jaune" puis cliquer sur <code>Commit changes</code></li>
+</ul>
+<p><strong>History</strong> </p>
+<ul>
+<li>Cliquer sur <code>History</code> pour voir l'historique.</li>
+<li>En cliquant sur un des commit, on peut voir ce qui a été modifié (souligné, biffer)</li>
+<li>On voit aussi <code>commit d8f911b0c32226239ff7bb95e40306014b6386be" commit hash meaning</code></li>
+<li>La suite de caractères <code>d8f911b0c32226239ff7bb95e40306014b6386be</code> est l'identifiant unique du commit</li>
+<li>On le voit aussi dans l'URL <code>https://github.com/Charles-depot/rainbow/commit/d8f911b0c32226239ff7bb95e40306014b6386be</code></li>
+</ul>
+<p><strong>Bilan :</strong></p>
+<ul>
+<li>Création d'un dépot.</li>
+<li>Plusieurs commit</li>
+<li>Historique</li>
+</ul>
+<h2 id="b-branches">B. Branches<a class="headerlink" href="#b-branches" title="Permanent link">⚓︎</a></h2>
+<p>Nous avons effectué des <code>commit</code> de façon linéaire en apportant des modifications. Chaque commit possède un identifiant unique.
+C'est la branche <code>master ou main</code>. C'est la racine de notre arbre.</p>
+<p>Je souhaite maintenant faire des modifications mais je ne sais pas si 
+je vais les garder. Je souhaite faire une expérience sur mon poème qui va
+parler de licornes.
+Je souhaite bifurquer (<code>branch</code>) à partir d'un commit en créant une nouvelle branche.</p>
+<p>On peut toujours continuer à travailler sur la branche master.
+On peut aussi faire des commit sur la nouvelle branche.
+ On peut faire aussi une autre branche nommée <em>fées</em> à partir d'un autre commit.
+Etc...</p>
+<p>Et comment peut-on fusionner (<code>merge</code>) tout ce travail ?</p>
+<p><img alt="📝" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4dd.svg" title=":pencil:" /> </p>
+<ul>
+<li>Créer la nouvelle branche <em>licorne</em></li>
+<li>Vérifier que vous êtes bien sur la branche <em>licorne</em></li>
+<li>Modifier le poème en ajoutant des mots.</li>
+</ul>
+<p>Ensuite on a le choix :</p>
+<p><code>Commit directly to the licorne branch</code></p>
+<p><code>Create a new branch for this commit and start a pull request</code></p>
+<p>On choisit <code>Commit directly to the licorne branch</code>. Et on sauvegarde.</p>
+<p>Si on switch sur la branche <code>main</code>, on voit  l'ancienne version du poème.
+On aurait pu faire un commit à partir de la branche main mais on a choisit de faire un chemin différent. On a deux chemins maintenant que l'on peut travailler séparément.</p>
+<p>Maintenant si je trouve que le chemin licorne est valable et je souhaite que ce travail aille dans la branche <code>main</code></p>
+<ul>
+<li>Revenir dans le dépot <code>rainbow</code> puis Insights puis Network. Cela permet de visualiser les différents branches.</li>
+</ul>
+<p><img alt="graph_network" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_5483d2887de27b34ca1ddb0f9fea315b.PNG" /></p>
+<p>push : pousser (envoyer) quelque chose à quelqu'un 
+pull : tirer quelque chose  à quelqu'un
+pull request : prendre les changements et les tirer vers la branche master</p>
+<ul>
+<li>
+<p>retourner sur la branche <code>main</code> pour voir :
+ <img alt="pull_request" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_33cebc988e3d8db05f94071b664e744a.PNG" /></p>
+</li>
+<li>
+<p>Cliquer sur le bouton : <code>Compare &amp; pull request</code>. Je suis en train de faire un <code>pull request</code> c'est à dire une requète pour fusionner les changements faits de <code>licorne</code> à <code>main</code>.
+On peut voir les changements en bas de page.</p>
+</li>
+<li>Cliquer sur le bouton <code>create pull request</code></li>
+<li>
+<p>Cliquer sur le bouton <code>Merge pull request</code> pour finaliser. Puis <code>Confirm merge</code></p>
+</li>
+<li>
+<p>Revenir dans le dépot <code>rainbow</code> puis <code>Insights</code> puis <code>Network</code>.
+Cela permet de visualiser ce qui s'est passé. On peut voir que la branche licorne a fusionné avec la branche<code>main</code>.</p>
+</li>
+</ul>
+<p><img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_d59f2cdebfbd61ae8515f244da67ed83.PNG" /></p>
+<ul>
+<li>Créer une nouvelle branche <code>poneys</code> à partir de <code>main</code>.</li>
+<li>Modifier le poème.</li>
+<li>
+<p>Faire un <code>commit</code></p>
+</li>
+<li>
+<p>Revenir à la branche <code>main</code></p>
+</li>
+<li>Modifier le poème.</li>
+<li>
+<p>Faire un <code>commit</code></p>
+</li>
+<li>
+<p>Revenir dans le dépot <code>rainbow</code> puis <code>Insights</code> puis <code>Network</code>.</p>
+</li>
+</ul>
+<p>On peut voir les différents actions.</p>
+<p><img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_3444f77f17abe7b83f96af4c9e86a6dd.PNG" /></p>
+<p>Commnent fusionner le tout ?</p>
+<p>Branche <code>main</code>
+Cliquer sur le bouton : <code>Compare &amp; pull request</code>
+Cliquer sur le bouton <code>Merge pull request</code> pour finaliser. Puis <code>Confirm merge</code></p>
+<p>Revenir dans le dépot <code>rainbow</code> puis <code>Insights</code> puis <code>Network</code>.
+On peut voir le résultat.</p>
+<p><img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_a9f7b2c83ebbcaacfe1e2dbf4f36658b.PNG" /></p>
+<h2 id="c-forks-and-pull-requests">C. Forks and Pull Requests<a class="headerlink" href="#c-forks-and-pull-requests" title="Permanent link">⚓︎</a></h2>
+<p>Nous allons voir comment contribuer/collaborer avec une autre personne 
+dans le dépot.</p>
+<p>Deux concepts à ajouter.</p>
+<ul>
+<li>
+<p>Fork
+une instance compléte de mon dépot sur un autre compte
+On aura une exacte réplication du dépot avec les commit et les branches.
+On peut travailler sur le fork (commit, branches) sans modifier le dépot original.</p>
+</li>
+<li>
+<p>Pull request
+Cela signifie que par exemple si une branche de mon travail sur le fork est superbe et que je souhaite contribuer dans le dépot original. Je vais envoyer ce travail dans le dépot original.
+Et c'est au dépot original d'accepter ou rejeter d'où le pull request.</p>
+</li>
+</ul>
+<p><img alt="📝" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4dd.svg" title=":pencil:" />
+<code>charlestuteur</code> est au autre compte.
+- Aller sur <code>charlestuteur</code>, chercher le dépot <code>charles-depot</code> puis <code>fork</code>.
+- On peut le voir sur ce compte d'où provient le fork :</p>
+<p><img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_cc8ce67163687f8601e3f6d12cf37c64.png" /></p>
+<ul>
+<li>Modifier le poeme</li>
+<li>Faire un commit en choisissant <code>Create a new branch for this commit and start a pull request.</code>
+On peut aussi faire juste un commit</li>
+<li>Ensuite faire un pull request pour ajouter à la brancher master du fork</li>
+<li>
+<p>Verifier sur Insights/Network</p>
+</li>
+<li>
+<p>Créer un <code>pull request</code> vers charles-depot.
+Et attendre la réponse.</p>
+</li>
+<li>
+<p>Aller sur charles-depot et cliquer sur <code>Pull requests</code></p>
+</li>
+</ul>
+<p><img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_53b19a32151bac85e9e1ea2766d47464.png" /></p>
+<ul>
+<li>
+<p>En cliquant sur la demande on peut voir les changements
+<img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_006a6dfde9c7b28aeed8a9b08e53b8eb.png" /></p>
+</li>
+<li>
+<p>Remplir le commentaire</p>
+</li>
+<li>
+<p>Cliquer sur <code>Merge pull requests</code></p>
+</li>
+<li>
+<p>Aller sur charlestuteur pour voir la péponse.</p>
+</li>
+</ul>
+<h2 id="d-issues">D. Issues<a class="headerlink" href="#d-issues" title="Permanent link">⚓︎</a></h2>
+<p>Vous pouvez utiliser <code>GitHub Issues</code> pour planifier, suivre les idées, les commentaires, les tâches ou les bogues. En un mot suivre votre travail.</p>
+<p><img alt="📝" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4dd.svg" title=":pencil:" />
+- Cliquer sur <code>New Issue</code> pour créer un nouveau problème.</p>
+<ul>
+<li>
+<p>Remplir les informations</p>
+</li>
+<li>
+<p>Donner à votre problème un titre descriptif. Le titre doit indiquer en un coup d'œil de quoi il s'agit.</p>
+</li>
+<li>
+<p>Ajoutez une description qui explique le but du problème, y compris tous les détails qui pourraient aider à résoudre le problème. </p>
+</li>
+<li>
+<p>Vous pouvez utiliser Markdown pour ajouter une mise en forme, des liens, des emojis, etc. 
+Pour plus d'informations, consultez <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">Écrire sur GitHub</a></p>
+</li>
+<li>
+<p>Ajouter une liste de tâches.</p>
+</li>
+<li>[] #50</li>
+<li>
+<p>[] faire les modifications</p>
+</li>
+<li>
+<p>Ajouter des étiquettes (labels)**
+Ajouter une étiquette pour catégoriser votre problème. GitHub fournit des étiquettes par défaut. </p>
+</li>
+<li>
+<p>Vous pouvez utiliser ces libellés par défaut ou créer les votres.
+Cliquer sur <code>issues</code> puis <code>Labels</code> puis <code>New label</code>.
+Donner un nom, une description et une couleur.
+<a href="https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels">Etiquettes</a></p>
+</li>
+</ul>
+<p><img alt="📝" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4dd.svg" title=":pencil:" /> Associer les issues au commit ou au pull request ?</p>
+<ul>
+<li>Créer un commit et associer dans le titre le numéro de l'issue comme  ... per #8 
+On crée un commit particulier à cette issue.
+En revenant sur les issues :
+<code>Charles-depot added a commit that referenced this issue 1 minute ago</code></li>
+</ul>
+<p><img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_85cb3c670c0797bcc124eca97d833d73.PNG" /></p>
+<p>On peut cliquer sur commit lié <code>per #8</code> pour suivre les changements.</p>
+<ul>
+<li>
+<p>Clore l'issue si besoin ou directement dans le commit en écrivant dans le titre fixes #8</p>
+</li>
+<li>
+<p>On peut faire une issue à partir d'un commit.</p>
+</li>
+</ul>
+<p><code>commit 21f9ba806f57fd947586de3517a469fe41af2157</code></p>
+<p><img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_98d67fbedcbcf7b8df91ee539849e138.PNG" /></p>
+<p><strong>Bilan</strong></p>
+<ul>
+<li>Référence au numéro de l'issue</li>
+<li>Référence à l'identifiant d'un commit ou description de l'issue.</li>
+</ul>
+<h2 id="e-cloner-un-depot-et-push-pull">E. Cloner un dépot et Push-Pull<a class="headerlink" href="#e-cloner-un-depot-et-push-pull" title="Permanent link">⚓︎</a></h2>
+<p>Pour l'instant nous avons travaillé directement sur Github website.</p>
+<p>Nous allons travaillé maintenant sur l'ordinateur.</p>
+<p>Il faut installer <strong><a href="https://git-scm.com/">Git</a></strong> sur l'ordinateur 
+<img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_19146e29058c062510d52a7147bd07dd.png" /></p>
+<p>Une alternative est d'utiliser un client comme GitHub Desktop
+Client git : https://desktop.github.com/
+aide  : https://docs.github.com/en/desktop</p>
+<h3 id="partie-1">Partie 1<a class="headerlink" href="#partie-1" title="Permanent link">⚓︎</a></h3>
+<p><img alt="📝" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4dd.svg" title=":pencil:" /></p>
+<ul>
+<li>Vérifier que l'installation a bien fonctionné en ouvrant un cmd.</li>
+<li>Taper git. On obtient une aide.</li>
+<li>Faire un dépot Git local. Il faut un dossier dans l'ordinateur qui soit un dépot Git.</li>
+</ul>
+<p>On va saisir le dépot sur GitHub et le mettre en local.</p>
+<p><img alt="📝" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4dd.svg" title=":pencil:" /></p>
+<ul>
+<li>Créer un nouveau dépot : rainbow-song avec un readme.md</li>
+</ul>
+<p>On peut ensuite voir :
+<img alt="adresse" src="clone1.png" />
+<img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_d29e0db1349fc33c5e5ae52c7ece490f.png" /></p>
+<p>C'est une  URL spécial qui correspond à ce dépot. Nécéssaire pour cloner
+le dépot créé sur un ordinateur local.
+<code>https://github.com/Charles-depot/Rainbow-song.git</code></p>
+<p>NB : Git associe une URL distante à un nom, et votre dépot par défaut est généralement appelée origin.</p>
+<p>https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories</p>
+<h3 id="partie-2">Partie 2<a class="headerlink" href="#partie-2" title="Permanent link">⚓︎</a></h3>
+<p>Dans le dossier local</p>
+<ul>
+<li>Soit cmd ou clique droit Git Bash Here
+<img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_6014752be79574f8eeb9682d8814b942.png" /></li>
+</ul>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/Charles-depot/Rainbow-song.git
+</code></pre></div>
+<ul>
+<li>
+<p>On obtient :
+<img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_d9f32c12e6be4f602748754de9e1301b.png" /></p>
+</li>
+<li>
+<p>Dans le dossier local :
+<img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_5f745267dddb2285af90c8ac423edb6c.png" /></p>
+</li>
+</ul>
+<p><img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_3e0ab3fd240c3fa53cd3416a0591a274.png" /></p>
+<ul>
+<li>Vous pouvez ouvrir le fichier README.md local pour voir qu'il correspond
+à celui de GitHub. Et le modifier. Le sauvegarder.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git status
+</code></pre></div>
+<p><img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_068f7f639bf1150e6188ee1184b0af31.png" /></p>
+<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" />  Ce n'est donc pas le dépot Git. Je ne suis pas dans le bon dossier.</p>
+<p><img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_214f06ea105de4cc2cdc52a759fe1a5a.png" /></p>
+<p>On voit que l'on est dans la branch <code>master</code>.
+On peut voir qu'un fichier a été modifié. </p>
+<p>Pour l'instant, le fichier est modifié localement.</p>
+<div class="highlight"><pre><span></span><code>$ git commit -a -m &quot;Ajout de la cle C&quot;
+</code></pre></div>
+<p>-a tous les fichiers
+-m commentaire</p>
+<p>On obtient :
+<img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_c43e2d522a38faa8e767a5e45116047a.png" /></p>
+<div class="highlight"><pre><span></span><code>git config --list 
+</code></pre></div>
+<p>Cela permet d'avoir des renseignements sur la configuration locale.
+<img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" />  Il y a problème avec le <code>user.name</code>. Il faut le modifier. Et prendre le <code>user.name</code> du dépot GitHub. </p>
+<div class="highlight"><pre><span></span><code>git config global user.name = &quot;Charles-depot&quot; 
+</code></pre></div>
+<p><img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_7cdb64370bcb2fa71809247a8c7434dd.png" /></p>
+<p>Cependant rien n'a changé dans le GitHub.</p>
+<div class="highlight"><pre><span></span><code>git remote
+
+&gt;&gt; origin 
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$ git remote -v
+origin  https://github.com/Charles-depot/Rainbow-song.git (fetch)
+origin  https://github.com/Charles-depot/Rainbow-song.git (push)
+</code></pre></div>
+<p>donc </p>
+<p>inf
+<div class="highlight"><pre><span></span><code>git push origin master
+</code></pre></div></p>
+<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> Cela ne fonction pas.</p>
+<p><div class="highlight"><pre><span></span><code>git push origin main
+</code></pre></div>
+<em>main</em> est nom de la branche dans le dépot.</p>
+<p>On obtient : </p>
+<p><img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_57bc45ad0f11d66054f764cac8fb8238.png" /></p>
+<p>On peut voir le changementsur le dépot GitHub.</p>
+<h2 id="f-git-init-and-git-add">F. Git init and git add<a class="headerlink" href="#f-git-init-and-git-add" title="Permanent link">⚓︎</a></h2>
+<p>Dans les parties précédentes, nous avons créé un dépot puis on l'a 
+mis dans l'ordinateur.</p>
+<p>Nous allons lier un dossier local à un dépot Git</p>
+<h3 id="1-creation-dun-dossier-local-test_depot">1. Création d'un dossier local test_depot<a class="headerlink" href="#1-creation-dun-dossier-local-test_depot" title="Permanent link">⚓︎</a></h3>
+<p>un fichier dance.md</p>
+<p>Dans ce dossier: </p>
+<div class="highlight"><pre><span></span><code>$ git status
+fatal: not a git repository (or any of the parent directories): .git
+</code></pre></div>
+<p>Nous allons en faire un dépot git.</p>
+<div class="highlight"><pre><span></span><code>$ git init
+Initialized empty Git repository in E:/Git Mkdocs Markdown/Test_depot/.git/
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+        dance.md
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</code></pre></div>
+<h3 id="2-ajouter-un-nouveau-fichier">2. Ajouter un nouveau fichier<a class="headerlink" href="#2-ajouter-un-nouveau-fichier" title="Permanent link">⚓︎</a></h3>
+<p>Création de dance-2.md</p>
+<div class="highlight"><pre><span></span><code>$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+        dance-2.md
+        dance.md
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</code></pre></div>
+<p>On ajoute le suivi sur le fichier dance.md</p>
+<div class="highlight"><pre><span></span><code>$ git add dance.md
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+        new file:   dance.md
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+        dance-2.md
+</code></pre></div>
+<p>On peut lire qu'il y a un fichier suivi <em>dance.md</em> et un fichier non suivi <em>dance-2.md</em></p>
+<p>Un petit <em>commit</em></p>
+<div class="highlight"><pre><span></span><code>$ git commit -m &quot;Ajout d&#39;une danse&quot;
+[master (root-commit) 1c0d430] Ajout d&#39;une danse
+ 1 file changed, 3 insertions(+)
+ create mode 100644 dance.md
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$ git status
+On branch master
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+        dance-2.md
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</code></pre></div>
+<p>Si on souhaite tout suivre, on utilise la commande <em>git add .</em></p>
+<div class="highlight"><pre><span></span><code>$ git add .
+
+$ git commit -m &quot;Ajout de la deuxième dance&quot;
+[master 8953913] Ajout de la deuxième dance
+ 1 file changed, 3 insertions(+)
+ create mode 100644 dance-2.md
+
+$ git status
+On branch master
+nothing to commit, working tree clean
+</code></pre></div>
+<h3 id="3-mettre-tout-dans-un-depot">3. Mettre tout dans un dépot<a class="headerlink" href="#3-mettre-tout-dans-un-depot" title="Permanent link">⚓︎</a></h3>
+<div class="highlight"><pre><span></span><code>$ git push master
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream master master
+
+$ git remote -v
+</code></pre></div>
+<p>Le dépot Git vide existe mais il n'y a pas d'association avec le dossier local.</p>
+<p><img alt="" src="git1.PNG" /></p>
+<p><img alt="" src="git2.PNG" /></p>
+<p><img alt="" src="git3.PNG" /></p>
+<p>On peut voir la ligne
+<code>https://github.com/Charles-depot/test_depot.git</code>
+permettant d'associer le dépot distant avec le dossier local</p>
+<div class="highlight"><pre><span></span><code>$ git remote add origin https://github.com/Charles-depot/test_depot.git
+
+$ git remote
+origin
+
+$ git remote -v
+origin  https://github.com/Charles-depot/test_depot.git (fetch)
+origin  https://github.com/Charles-depot/test_depot.git (push)
+</code></pre></div>
+<p>Le dépot distant se nomme <em>origin</em></p>
+<div class="highlight"><pre><span></span><code>$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 496 bytes | 248.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Charles-depot/test_depot.git
+ * [new branch]      master -&gt; master
+</code></pre></div>
+<p>Si on regarde maintenant dans le dépot distant.
+<img alt="" src="git4.PNG" /></p>
+<p>On retrouve nos deux fichiers.</p>
+<h3 id="4-changement-dans-github">4.  Changement dans GitHub<a class="headerlink" href="#4-changement-dans-github" title="Permanent link">⚓︎</a></h3>
+<p>Modification du fichier dance.md dans GitHub
+<img alt="" src="git5.PNG" />
+Un petit commit
+<img alt="" src="git6.PNG" /></p>
+<p>Que s'est-il passé en local ?</p>
+<div class="highlight"><pre><span></span><code>$ git status
+On branch master
+nothing to commit, working tree clean
+</code></pre></div>
+<p><strong>Rien</strong></p>
+<p>La solution avec un <strong>git pull</strong>.</p>
+<div class="highlight"><pre><span></span><code>$ git pull origin master
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 699 bytes | 2.00 KiB/s, done.
+From https://github.com/Charles-depot/test_depot
+ * branch            master     -&gt; FETCH_HEAD
+   8953913..41b7811  master     -&gt; origin/master
+Updating 8953913..41b7811
+Fast-forward
+ dance.md | 1 +
+ 1 file changed, 1 insertion(+)
+</code></pre></div>
+<p>On ouvre le fichier en local. <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" /></p>
+<p><img alt="" src="https://minio.apps.education.fr/codimd-prod/uploads/upload_5bc0157687c21a06281e610bbb0c0f84.PNG" /></p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Dernière mise à jour:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">22 octobre 2022</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+    <script src="../../js/ide.js"></script> 
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+      
+        
+        <a href="../git1/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Git premiers pas" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              Git premiers pas
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../git3/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Différences clone / fork" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              Différences clone / fork
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      CC BY-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="mailto:user@mail.fr" target="_blank" rel="noopener" title="Écrire à l&#39;auteur" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6l-126.3-52.5-40.1 74.5c-5.2 9.7-16.3 14.6-27 11.9S192 499 192 488v-96c0-5.3 1.8-10.5 5.1-14.7l165.3-212.6c2.5-7.1-6.5-14.3-13-8.4l-179 161.9-32 28.9c-9.2 8.3-22.3 10.6-33.8 5.8l-85-35.4C8.4 312.8.8 302.2.1 290s5.5-23.7 16.1-29.8l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      
+        <script src="../../scripts/mathjax.js"></script>
+      
+        <script src="../../xtra/javascripts/interpreter.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+    
+  </body>
+</html>
