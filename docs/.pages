@@ -1,5 +1,2 @@
 nav :
-    - Présentation : index.md
-    - Créer et héberger son site : ./Tutoriel/tutoriel/
-    - Introduction à Git : ./Git/git1/
-    - Ressources : ./Ressources/
+    - ...

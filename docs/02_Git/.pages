@@ -1,3 +1,5 @@
+title : Git
+
 nav:
     - Git premiers pas  : git1.md
     - Introduction Git / Github : git2.md
