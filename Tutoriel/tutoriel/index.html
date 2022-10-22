@@ -229,6 +229,22 @@
         
   
   
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Ressources/" class="md-tabs__link">
+        Ressources
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
     
   
 
@@ -238,7 +254,7 @@
   
     <li class="md-tabs__item">
       <a href="./" class="md-tabs__link md-tabs__link--active">
-        Tutoriel
+        Créer et héberger son site
       </a>
     </li>
   
@@ -387,6 +403,54 @@
 
   
   
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Ressources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ressources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Ressources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ressources/" class="md-nav__link">
+        Ressources et tutoriels
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -394,20 +458,20 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_3">
-          Tutoriel
+        <label class="md-nav__link" for="__nav_4">
+          Créer et héberger son site
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Tutoriel" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+      <nav class="md-nav" aria-label="Créer et héberger son site" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          Tutoriel
+          Créer et héberger son site
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -568,7 +632,7 @@
 <p class="admonition-title">Pré-requis logiciels et packages Python</p>
 <p>Les logiciels suivants sont nécessaires :</p>
 <ul>
-<li><a class="" href="https://git-scm.com/" target="_blank">Git</a></li>
+<li><a class="" href="https://git-scm.com/" target="_blank">Git</a>.</li>
 <li><a class="" href="https://code.visualstudio.com/" target="_blank">VisualStudioCode</a> (ou son équivalent libre <a class="" href="https://vscodium.com/" target="_blank">VSCodium</a>)</li>
 <li>Une version récente de <a class="" href="https://www.python.org/downloads/" target="_blank">Python</a> doit également être installée.</li>
 </ul>
@@ -576,11 +640,20 @@
 <div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">mkdocs</span><span class="o">-</span><span class="n">material</span> <span class="n">mkdocs</span><span class="o">-</span><span class="n">macros</span><span class="o">-</span><span class="n">plugin</span> <span class="n">mkdocs</span><span class="o">-</span><span class="n">awesome</span><span class="o">-</span><span class="n">pages</span><span class="o">-</span><span class="n">plugin</span> <span class="n">mkdocs</span><span class="o">-</span><span class="n">git</span><span class="o">-</span><span class="n">revision</span><span class="o">-</span><span class="n">date</span><span class="o">-</span><span class="n">localized</span><span class="o">-</span><span class="n">plugin</span>
 </code></pre></div>
 </div>
+<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> <strong>utilisation de Git</strong></p>
+<ul>
+<li>Le principe d'utilsation de Git est complexe : des fiches explicatives sont disponibles <a href="/Git/git1/">ici</a></li>
+<li>Toutefois, le logiciel VisualStudioCode intègre nativement la prise en charge de Git, et en propose une interface simple et agréable. </li>
+</ul>
 <h3 id="12-hebergement-des-pages">1.2. Hébergement des pages<a class="headerlink" href="#12-hebergement-des-pages" title="Permanent link">⚓︎</a></h3>
 <p>Dans nos exemples, les pages sont hébergées chez <a class="" href="https://github.com/" target="_blank">GitHub</a>, chez qui la création d'un compte est donc nécessaire. </p>
-<p>Toutefois, une alternative libre existe et propose un service équivalent : <a class="" href="https://gitlab.com/gitlab-org/gitlab" target="_blank">GitLab</a> : </p>
+<p>Toutefois, une alternative libre existe et propose un service équivalent : <a class="" href="https://gitlab.com/gitlab-org/gitlab" target="_blank">GitLab</a>.</p>
 <h2 id="2-creation-dun-nouveau-depot">2. Création d'un nouveau dépôt<a class="headerlink" href="#2-creation-dun-nouveau-depot" title="Permanent link">⚓︎</a></h2>
-<p>La méthode présentée ci-dessous va consister à cloner (<em>forker</em>) un dépôt déjà existant, contenant la structure minimale d'un site en MkDocs.</p>
+<div class="admonition note inline end">
+<p class="admonition-title">fork</p>
+<p>Un fork est une copie personnelle d'un dépôt existant. Cette copie est totalement indépendante du dépôt initial.</p>
+</div>
+<p>La méthode présentée ci-dessous va consister à <strong>forker</strong> un dépôt déjà existant, contenant la structure minimale d'un site en MkDocs.</p>
 <p>Ce site minimal est visible à l'adresse <a class="" href="https://nsi-mauriac.github.io/mkdocs-modele/" target="_blank">https://nsi-mauriac.github.io/mkdocs-modele/</a>.</p>
 <h3 id="21-sur-githubcom-fork-du-site-modele">2.1 Sur <code>GitHub.com</code> : fork du site modèle<a class="headerlink" href="#21-sur-githubcom-fork-du-site-modele" title="Permanent link">⚓︎</a></h3>
 <ol>
@@ -617,16 +690,44 @@
 <li>Ouvrir la page <code>127.0.0.1:8000</code> dans son navigateur.</li>
 <li>Dans VSC, rédiger ses documents en Markdown, faire un <code>Ctrl-S</code> pour vérifier en local les changements sur le site.</li>
 <li>Pour valider les changements et les rendre visibles sur <code>GitHub</code>, aller dans la partie <code>Contrôle du code-source</code> de VSC, sur le bandeau latéral gauche. </li>
-<li>Les fichiers modifiés apparaissent. Écrire quelques mots pour décrire les changements puis cliquer sur <code>Validation</code>. </li>
-<li>Cliquer ensuite sur <code>Synchroniser les modifications</code>. </li>
+<li>Les fichiers modifiés apparaissent. Écrire quelques mots pour décrire les changements puis cliquer sur <code>Validation</code>. On réalise alors un <em>commit</em>.</li>
+<li>Cliquer ensuite sur <code>Synchroniser les modifications</code>. On réalise alors un <em>push</em>.</li>
+<li>Sur les serveurs de GitHub, de manière automatique, notre site va se construire et se déployer. Suivant la taille du site, il peut se passer 1 ou 2 minutes avant que le site soit actualisé.</li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Quelles commandes sont exécutées sur le serveur distant ?</p>
+<p>Dans l'arborescence de notre dépôt se trouve un dossier caché <code>.github</code> qui contient un fichier <code>ci.yml</code> (ci comme <em>Continuous Integration</em>). On y retrouve les commandes exécutées sur le serveur distant :</p>
+<div class="highlight"><pre><span></span><code>name: ci
+on:
+  push:
+    branches:
+      - master
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: pip install mkdocs-material
+      - run: pip install mkdocs-macros-plugin
+      - run: pip install mkdocs-awesome-pages-plugin
+      - run: pip install mkdocs-git-revision-date-localized-plugin
+      - run: mkdocs gh-deploy --force
+</code></pre></div>
+<p>On y retrouve l'installation des plugins nécessaires, et la toute dernière ligne <code>mkdocs gh-deploy</code> qui nous avait permis de construire (localement) notre site.</p>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">21 octobre 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">22 octobre 2022</span>
       
     
   </small>
@@ -658,7 +759,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
       
         
-        <a href="../../Git/git3/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Différences clone / fork" rel="prev">
+        <a href="../../Ressources/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Ressources et tutoriels" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -667,7 +768,7 @@
               <span class="md-footer__direction">
                 Précédent
               </span>
-              Différences clone / fork
+              Ressources et tutoriels
             </div>
           </div>
         </a>
