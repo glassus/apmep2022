@@ -3,8 +3,8 @@
 
 ## 1. Introduction
 
-- Charles POULMAIRE, enseignant de Mathématiques et de NSI dans l'Académie de Versailles. Président de l'AEIF.
-- Gilles LASSUS, enseignant de Mathématiques et de NSI dans l'Académie de Bordeaux.
+- Charles POULMAIRE, enseignant de Mathématiques et de NSI dans l'académie de Versailles. Président de l'AEIF.
+- Gilles LASSUS, enseignant de Mathématiques et de NSI dans l'académie de Bordeaux.
 
 Membres de l'[Association des Enseignantes et enseignants d'Informatique de France](/AEIF/AEIF/){. target="_blank"}.
 
@@ -118,18 +118,30 @@ Une éditeur Python peut être intégré très facilement :
 
 Il nécessite la présence de fichiers particuliers (javascript, css) dans l'arborescence de votre site.
 
+Pour les ensiegnants d'informatique, il est aussi possible d'intégrer [une console SQL](https://epithumia.github.io/mkdocs-sqlite-console/usage/#afficher-la-consoleide){. target="_blank"} pour réaliser des requêtes en direct.
 
-### 7.2 Intégration d'iframe
+
+
+### 7.3 Intégration d'iframes
 
 À l'intérieur du Markdown, il est possible d'écrire du ```html``` et donc d'intégrer des iframes... mais le code n'est plus très simple et on se retrouve à faire ce qu'on a voulu éviter : du ```hmtl``` !!
 
 !!! note "Exemple d'intégration"
-    === "Rendu"
-        Regardez cette belle animation GeoGebra :
-        <iframe src="https://www.geogebra.org/classic/ahavfqve?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
-
     === "Code utilisé"
         ```
         Regardez cette belle animation GeoGebra :
         <iframe src="https://www.geogebra.org/classic/ahavfqve?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
         ```
+
+    === "Rendu"
+        Regardez cette belle animation GeoGebra :
+        <iframe src="https://www.geogebra.org/classic/ahavfqve?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+
+
+
+
+### 7.4 Générer un pdf à partir d'un fichier Markdown
+
+Il est courant de générer un pdf depuis un fichier Markdown, notamment avec [pandoc](https://pandoc.org/demos.html){. target="_blank"}.
+
+Mais il est possible transformer directement vos pages web générées par MkDocs en un (joli) pdf grâce au plugin [mkdocs-page-pdf](https://github.com/brospars/mkdocs-page-pdf){. target="_blank"} créé par Benoït Ropars. 
