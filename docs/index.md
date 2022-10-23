@@ -4,8 +4,9 @@ bonjour
 
 ## 1. Introduction
 
-- Charles POULMAIRE, enseignant de Mathématiques et de NSI dans l'académie de Versailles. Président de l'AEIF.
-- Gilles LASSUS, enseignant de Mathématiques et de NSI dans l'académie de Bordeaux.
+- Charles POULMAIRE, enseignant de Mathématiques et de NSI dans l'académie de Versailles. Président de l'AEIF. Email : charles.poulmaire@ac-versailles.fr
+
+- Gilles LASSUS, enseignant de Mathématiques et de NSI dans l'académie de Bordeaux. Email : gilles.lassus@ac-bordeaux.fr
 
 Membres de l'[Association des Enseignantes et enseignants d'Informatique de France](/AEIF/AEIF/){. target="_blank"}.
 
